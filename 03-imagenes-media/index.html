@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube (Versión Simplificada)</title>
+    <meta http-equiv="Cache-Control" content="max-age=604800">
+  </head>
+  <body>
+    <h1>Bienvenido a YouTube</h1>
+
+    <!-- Cabecera -->
+    <header>
+      <h1>YouTube</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#trending">Tendencias</a></li>
+          <li><a href="#subscriptions">Suscripciones</a></li>
+          <li><a href="#history">Historial</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Barra de búsqueda -->
+    <section id="search">
+      <form>
+        <input type="text" placeholder="Buscar" />
+        <input type="submit" value="Buscar" />
+      </form>
+    </section>
+
+    <!-- Contenido principal -->
+    <main>
+
+      <!-- Videos recomendados -->
+      <section id="home">
+        <h2>Videos recomendados</h2>
+        <article>
+          <h3>Video 1</h3>
+          <p>Descripción del video 1</p>
+        </article>
+        <article>
+          <h3>Video 2</h3>
+          <p>Descripción del video 2</p>
+        </article>
+      </section>
+
+      <!-- details + summary: sección colapsable -->
+      <details>
+        <summary>Más Información</summary>
+        <h2>Nombre</h2>
+        <img src="ChatGPT Image 21 may 2026, 20_07_16.png" alt="Avatar IV" />
+      </details>
+
+      <!-- dialog: modal de alerta -->
+      <dialog id="alert">
+        <p>¡Este es un mensaje de alerta!</p>
+        <button id="closeAlert" onclick="document.getElementById('alert').close()">Ok</button>
+      </dialog>
+      <button onclick="document.getElementById('alert').showModal()">Mostrar alerta</button>
+
+      <!-- dialog: modal de Gandalf -->
+      <dialog id="gandalfModal">
+        <img src="Gandalf.jpeg" alt="Gandalf" />
+        <p>No.. puedes... pasar!!!</p>
+        <button id="closeGandalf" onclick="document.getElementById('gandalfModal').close()">Cerrar</button>
+      </dialog>
+      <button id="showGandalf" onclick="document.getElementById('gandalfModal').showModal()">Mostrar Gandalf</button>
+
+      <!-- contenteditable: contenido editable en el navegador -->
+      <h3 contenteditable>Título (editable)</h3>
+      <div contenteditable>
+        <p>Este es un párrafo editable de ejemplo</p>
+      </div>
+
+      <!-- Script inline -->
+      <script>
+        alert('¡Hola!')
+      </script>
+
+      <!-- Script externo -->
+      <script src="/script.js"></script>
+
+      <!-- Script como módulo ES6 -->
+      <script type="module">
+        import { pi } from './pi-module.js';
+      </script>
+
+      <!-- Fallback para navegadores sin soporte de módulos -->
+      <script nomodule>
+        /* Código para navegadores antiguos */
+      </script>
+
+      <!-- Tabla de datos -->
+      <table id="tabla">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Calificación</th>
+        </tr>
+        <template id="usuario">
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+        </template>
+      </table>
+
+      <!-- Imagen con evento onclick -->
+      <div>
+        <img src="Gandalf.jpeg" alt="Gandalf" onclick="alert('¡Has hecho clic!')" />
+      </div>
+
+      <!-- Imagen con evento load -->
+      <img style="width: 300px;" src="Gandalf.jpeg" id="gandalf" alt="Gandalf">
+      <p id="loadOutput"></p>
+      <script>
+        document.getElementById("gandalf").addEventListener("load", function() {
+          document.getElementById("loadOutput").innerHTML = "Imagen cargada";
+        });
+      </script>
+
+      <!-- Textarea con evento scroll -->
+      <textarea style="width:100%; height:100px;" id="scrollExample">
+        HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup Language. Hypertext defines the link between the web pages. Markup Language is used to define the text document within tag which defines the structure of web pages. HTML is a markup language which is used by the browser to manipulate text, images and other content to display it in required format.
+      </textarea>
+      <p id="scrollOutput"></p>
+      <script>
+        document.getElementById("scrollExample").addEventListener("scroll", function() {
+          document.getElementById("scrollOutput").innerHTML = "Has hecho scroll en el textArea.";
+        });
+      </script>
+
+      <!-- Evento onblur -->
+      <h2>onblur event example</h2>
+      <input onblur="myFunctionBlur()">
+      <script>
+        function myFunctionBlur() {
+          alert("Has salido del campo de texto.");
+        }
+      </script>
+
+      <!-- Evento onfocus -->
+      <h2>onfocus event example</h2>
+      <input onfocus="myFunctionFocus()">
+      <script>
+        function myFunctionFocus() {
+          alert("Has entrado en el campo de texto.");
+        }
+      </script>
+
+      <!-- Evento onclick en párrafo: cambia el color del texto -->
+      <p id="colorExample" onclick="myFunctionColor()">Haz click para cambiarme de color</p>
+      <script>
+        function myFunctionColor() {
+          document.getElementById("colorExample").style.color = "red";
+        }
+      </script>
+
+      <!-- Tendencias -->
+      <section id="trending">
+        <h2>Tendencias</h2>
+        <article>
+          <h3>Trending Video 1</h3>
+          <p>Descripción del trending video 1</p>
+        </article>
+        <article>
+          <h3>Trending Video 2</h3>
+          <p>Descripción del trending video 2</p>
+        </article>
+      </section>
+
+      <!-- Suscripciones -->
+      <section id="subscriptions">
+        <h2>Mis Suscripciones</h2>
+        <ul>
+          <li>Canal 1</li>
+          <li>Canal 2</li>
+        </ul>
+      </section>
+
+      <!-- Historial -->
+      <section id="history">
+        <h2>Historial</h2>
+        <ul>
+          <li>Video 1</li>
+          <li>Video 2</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <ul>
+        <li><a href="#about">Acerca de</a></li>
+        <li><a href="#press">Prensa</a></li>
+        <li><a href="#copyright">Derechos de autor</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

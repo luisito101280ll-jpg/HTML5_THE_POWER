@@ -32,6 +32,39 @@ Tres archivos: página principal, página de prácticas y ejercicio de calentami
 
 ---
 
+### 03 · Imágenes, Media, Interactividad y DOM
+**Carpeta:** `03-imagenes-media/`
+
+Clon simplificado de YouTube. El ejercicio más completo hasta ahora — combina estructura semántica con elementos interactivos y una introducción a JavaScript en el navegador. Conceptos aplicados:
+
+**Elementos interactivos nativos**
+- `<details>` + `<summary>` — sección colapsable sin necesidad de JavaScript
+- `<dialog>` con `showModal()` y `close()` — modales nativos del navegador
+- Atributo `contenteditable` — hace cualquier elemento editable en el navegador
+- `placeholder` en `<input>` — texto de ayuda dentro del campo
+
+**Tablas**
+- `<table>`, `<tr>`, `<th>`, `<td>` — estructura básica de tabla de datos
+- `<template>` — fragmento HTML reutilizable que no se renderiza hasta que JS lo inserta
+
+**Scripts y módulos**
+- `<script>` inline, externo (`src`) y como módulo ES6 (`type="module"` + `import`)
+- `<script nomodule>` — fallback para navegadores sin soporte de módulos
+
+**Eventos del DOM**
+- Eventos como atributo HTML: `onclick`, `onblur`, `onfocus`
+- `addEventListener("scroll", función)` — forma recomendada de escuchar eventos desde JS
+- `document.getElementById()` — seleccionar elementos del DOM
+- `element.innerHTML` — leer o modificar el contenido de un elemento
+- `element.style.color` — modificar estilos desde JavaScript
+
+**Lecciones clave del ejercicio**
+- Los `id` deben ser únicos en toda la página; si se repiten, el JS solo encuentra el primero
+- Separar funciones con nombres distintos evita que una sobreescriba a otra
+- Las rutas a archivos deben ser relativas al proyecto, nunca rutas absolutas locales (`C:\Users\...`)
+
+---
+
 ### 05 · Proyecto — Linktree personal
 **Carpeta:** `05-linktree/`
 
@@ -39,7 +72,6 @@ Página de perfil con enlaces a redes sociales, al estilo Linktree. Conceptos ap
 - Etiquetas semánticas de estructura: `<header>`, `<main>`, `<section>`
 - Imagen de perfil con `<img>` y atributo `alt`
 - Lista de enlaces a perfiles externos (LinkedIn, web propia)
-- Enlace a web con protocolo `https://`
 
 ---
 
@@ -51,7 +83,6 @@ Dos archivos: portada de noticias y página de artículos. Conceptos aplicados:
 - Imágenes adaptables con `<picture>` y `<source media="...">`
 - Atributo `srcset` para distintas resoluciones de pantalla
 - Columna lateral con `<aside>` y lista de enlaces relacionados
-- Jerarquía de contenido con múltiples `<section>` dentro de un `<article>`
 
 ---
 
@@ -63,7 +94,6 @@ Página de producto con secciones de características, testimonios, precios y co
 - Tipos de input: `text`, `email`, `submit`
 - Asociación de etiquetas con campos mediante atributo `for` / `id`
 - Estructura de landing: `<header>`, varias `<section>` temáticas y `<footer>`
-- Listas de elementos en el `<footer>` con enlaces a redes sociales
 
 ---
 
@@ -75,8 +105,6 @@ Dos versiones de portfolio personal. Conceptos aplicados:
 - Navegación interna mediante `<nav>` con anclas a cada sección
 - Enlace de correo electrónico con protocolo `mailto:`
 - Texto con énfasis usando `<strong>`
-- Listado de proyectos con imagen, descripción y enlace a detalle
-- Listado de habilidades técnicas
 - `<footer>` con copyright usando la entidad `&copy;`
 - Versión alternativa con `<article>` para proyectos individuales
 
@@ -85,7 +113,7 @@ Dos versiones de portfolio personal. Conceptos aplicados:
 ## Chuleta de referencia
 **Carpeta:** `docs_chuleta/`
 
-Documento de consulta rápida y diario de aprendizaje en formato Markdown. Incluye las etiquetas más usadas, ejemplos mínimos y un sistema de repaso espaciado.
+Documento de consulta rápida y diario de aprendizaje en formato Markdown. Incluye todas las etiquetas practicadas, ejemplos mínimos funcionales y un sistema de repaso espaciado.
 
 ---
 
@@ -95,7 +123,7 @@ Documento de consulta rápida y diario de aprendizaje en formato Markdown. Inclu
 |--------|------|--------|
 | 01 | Estructura básica | Completado |
 | 02 | Texto, listas y enlaces | Completado |
-| 03 | Imágenes y media | Pendiente |
+| 03 | Imágenes, media, interactividad y DOM | Completado |
 | 04 | Formularios | Pendiente |
 | 05 | Proyecto Linktree | Completado |
 | 06 | Página de noticias | Completado |

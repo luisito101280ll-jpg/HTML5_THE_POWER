@@ -37,7 +37,7 @@
 - Pie de página: `<footer>`
 
 ### Imágenes y media
-- Imagen básica: `<img src="ruta.jpg" alt="descripción">`  → `alt` es obligatorio para accesibilidad
+- Imagen básica: `<img src="ruta.jpg" alt="descripción">` → `alt` es obligatorio para accesibilidad
 - Imagen con pie: `<figure>` + `<img>` + `<figcaption>descripción</figcaption>` + `</figure>`
 - Imagen responsive (varias resoluciones):
 ```html
@@ -55,11 +55,50 @@
 - Área de texto: `<textarea id="mensaje" name="mensaje" rows="5"></textarea>`
 - Botón de envío: `<input type="submit" value="Enviar">`
 - Etiqueta asociada: `<label for="nombre">Nombre:</label>` → `for` debe coincidir con el `id` del input
+- Texto de ayuda en el campo: atributo `placeholder="Escribe aquí..."`
 
 ### Texto y entidades
 - Negrita semántica: `<strong>texto importante</strong>`
 - Copyright: `&copy;` → se renderiza como ©
 - Salto de línea: `<br>`
+
+### Elementos interactivos
+- Sección colapsable: `<details>` + `<summary>Título visible</summary>` + contenido + `</details>`
+- Modal nativo:
+```html
+<dialog id="miModal">
+  <p>Contenido del modal</p>
+  <button onclick="document.getElementById('miModal').close()">Cerrar</button>
+</dialog>
+<button onclick="document.getElementById('miModal').showModal()">Abrir</button>
+```
+- Contenido editable en el navegador: atributo `contenteditable` en cualquier elemento
+
+### Tablas
+```html
+<table>
+  <tr>              <!-- fila -->
+    <th>Cabecera</th>   <!-- celda de cabecera -->
+    <td>Dato</td>       <!-- celda de dato -->
+  </tr>
+</table>
+```
+- `<template id="...">` — fragmento HTML reutilizable; no se renderiza hasta que JS lo inserta
+
+### Scripts y módulos
+- Script inline: `<script> /* código */ </script>`
+- Script externo: `<script src="archivo.js"></script>`
+- Módulo ES6: `<script type="module"> import { algo } from './modulo.js' </script>`
+- Fallback para navegadores sin módulos: `<script nomodule> /* código antiguo */ </script>`
+
+### Eventos del DOM
+- Atributo de evento: `onclick="miFuncion()"`, `onblur="..."`, `onfocus="..."`
+- Escuchar evento desde JS: `element.addEventListener("scroll", miFuncion)`
+- Seleccionar elemento: `document.getElementById("miId")`
+- Cambiar contenido: `element.innerHTML = "nuevo texto"`
+- Cambiar estilo: `element.style.color = "red"`
+
+**Regla de oro de los `id`:** cada `id` debe ser único en toda la página. Si se repite, `getElementById` solo encontrará el primero.
 
 ---
 
@@ -218,9 +257,58 @@
 
 ---
 
+### 2026-05-21 — Elementos interactivos, tablas, scripts y eventos DOM · Clon de YouTube
+
+**3 ideas**
+
+- `<dialog>` es un modal nativo del navegador: no necesita CSS ni JS para mostrarse/ocultarse, solo `showModal()` y `close()`
+- Los `id` deben ser únicos en toda la página — si se repiten, el JS solo encuentra el primero y el resto queda roto
+- `addEventListener` es más limpio que `onclick` en el HTML: separa la lógica de la estructura
+
+**1 ejemplo mínimo**
+
+```html
+<!-- Modal nativo -->
+<dialog id="miModal">
+  <p>¡Hola desde el modal!</p>
+  <button onclick="document.getElementById('miModal').close()">Cerrar</button>
+</dialog>
+<button onclick="document.getElementById('miModal').showModal()">Abrir</button>
+
+<!-- Sección colapsable -->
+<details>
+  <summary>Ver más</summary>
+  <p>Contenido oculto por defecto</p>
+</details>
+```
+
+**1 mini-ejercicio (hecho)**
+
+- Construir un clon simplificado de YouTube con: `<nav>` + buscador, secciones de vídeos, `<details>`, dos modales `<dialog>`, tabla de datos, `contenteditable`, eventos `onclick`/`onblur`/`onfocus`/`scroll` y manipulación básica del DOM con `getElementById`
+
+**Errores corregidos en este ejercicio**
+
+- `<ta>` → `<table>` (etiqueta mal escrita)
+- `id="close"` duplicado → renombrado a `id="closeAlert"` y `id="closeGandalf"`
+- `id="example"` duplicado → separado en `id="scrollOutput"`, `id="loadOutput"` y `id="colorExample"`
+- Tres funciones llamadas igual (`myFunction`) → renombradas a `myFunctionBlur`, `myFunctionFocus`, `myFunctionColor`
+- `gerElementById` / `getElementarById` → `getElementById` (typos en el nombre del método)
+- `functionmyFuncion()` → `function myFunctionColor()` (falta espacio + nombre incorrecto)
+- `<dialog open>` sin cerrar → eliminado
+- Ruta absoluta local (`C:\Users\...`) → reemplazada por ruta relativa
+- `"alt="Gandalf"` → `alt="Gandalf"` (comilla extra delante del atributo)
+- Faltaban `<meta charset>` y `<meta viewport>` en el `<head>`
+
+**1 duda (si aparece)**
+
+- (vacío)
+
+---
+
 ## Repaso espaciado (para no olvidar)
 
 - **Día 1 tras cada bloque:** reescribe la estructura sin mirar (5 min)
 - **Día 3:** escribe un formulario con `<label>` + `<input>` + `<textarea>` de memoria
 - **Día 7:** maqueta una página con semántica completa: `<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>`
 - **Día 14:** construye un Linktree y una página de noticias con imagen responsive desde cero
+- **Día 21:** crea un modal `<dialog>` + tabla + sección colapsable con `<details>` sin mirar la chuleta
