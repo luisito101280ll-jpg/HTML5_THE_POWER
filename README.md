@@ -2,6 +2,8 @@
 
 Repositorio de prácticas del curso de HTML5. Cada carpeta corresponde a un bloque temático con sus ejercicios y proyectos.
 
+🌐 **Demo en vivo:** [html5-the-power.netlify.app](https://html5-the-power.netlify.app)
+
 ---
 
 ## Temario practicado
