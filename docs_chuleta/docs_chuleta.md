@@ -305,6 +305,55 @@
 
 ---
 
+### 2026-05-22 — Entregable 01 · MyPinterest — Arquitectura de la Información
+
+**3 ideas**
+
+- Antes de escribir código conviene analizar la estructura de una página real con herramientas como **Pesticide** — ver los contenedores ayuda a decidir qué etiqueta usar en cada sitio
+- `loading="lazy"` en imágenes hace que el navegador solo las cargue cuando el usuario las va a ver, mejorando el rendimiento
+- `aria-label` en `<form>` y `<nav>` da contexto a lectores de pantalla cuando el elemento no tiene un texto visible que lo describa
+
+**1 ejemplo mínimo**
+
+```html
+<!-- Imagen con carga diferida -->
+<figure>
+  <a href="detalle.html">
+    <img src="./images/foto.jpg" alt="descripción" loading="lazy">
+    <figcaption>
+      <h3>Título</h3>
+      <p>Descripción corta</p>
+    </figcaption>
+  </a>
+</figure>
+
+<!-- Formulario accesible -->
+<form action="search.html" method="get" aria-label="Buscador principal">
+  <input type="search" name="query" placeholder="Buscar...">
+  <button type="submit">Buscar</button>
+</form>
+```
+
+**1 mini-ejercicio (hecho)**
+
+- Analizar Pinterest con Pesticide, identificar su estructura semántica y replicarla con HTML5: `<header>` con logo + buscador + `<nav>`, feed de `<article>` dentro de `<section>`, cada pin como `<figure>` con imagen y `<figcaption>`, `<footer>` con enlaces secundarios
+
+**Conceptos nuevos respecto a ejercicios anteriores**
+
+- `loading="lazy"` — carga diferida de imágenes
+- `aria-label` — etiqueta accesible para elementos sin texto visible
+- `<link rel="canonical">` — indica a los buscadores cuál es la URL principal de la página
+- `type="search"` — input específico para buscadores (activa funciones del navegador)
+- `<button type="submit">` — alternativa semántica a `<input type="submit">`
+- `form action="..."` y `method="get"` — hacia dónde envía el formulario y cómo
+- `<a>` envolviendo a `<figure>` — toda la tarjeta se convierte en enlace
+
+**1 duda (si aparece)**
+
+- (vacío)
+
+---
+
 ## Repaso espaciado (para no olvidar)
 
 - **Día 1 tras cada bloque:** reescribe la estructura sin mirar (5 min)
