@@ -1,0 +1,83 @@
+# MyPinterest - Ejercicio de Arquitectura de la Información
+
+## Qué es esto
+
+Práctica de HTML semántico basada en Pinterest. La idea no era copiar el diseño, sino entender cómo está montada por dentro: qué bloques usa, cómo se organizan y qué etiquetas tienen sentido en cada sitio.
+
+---
+
+## Por qué Pinterest
+
+Me pareció un buen ejemplo para analizar porque tiene una estructura bastante clara: cabecera fija, un feed de tarjetas repetidas y un footer. No hay demasiado ruido y es fácil identificar los bloques principales sin perderse.
+
+---
+
+## Cómo lo analicé
+
+Usé la extensión **Pesticide** en Chrome, que pinta los bordes de cada contenedor con colores distintos. Fue la primera vez que la usé y la verdad es que ayuda mucho a ver lo que hay detrás del diseño.
+
+Con eso pude identificar:
+
+- El `<header>` con el logo, el buscador y la navegación
+- El `<main>` con el feed de imágenes dentro de un `<section>`
+- Cada pin como un `<article>` independiente
+- El `<footer>` con los enlaces secundarios
+
+---
+
+## Estructura que usé
+
+```html
+<body>
+ ├── <header>
+ │     ├── logo (img dentro de a)
+ │     ├── buscador (form)
+ │     └── navegación (nav > ul > li)
+ │
+ ├── <main>
+ │     └── <section id="feed">
+ │            └── <article> × 9
+ │                   └── <figure> con img y figcaption
+ │
+ └── <footer>
+```
+
+Cada `<article>` tiene una imagen, un título y una descripción corta. Lo envolví todo en `<figure>` con `<figcaption>` porque me pareció lo más correcto semánticamente para una galería de imágenes.
+
+---
+
+## Cosas que apliqué
+
+- `loading="lazy"` en las imágenes para que no carguen todas a la vez
+- `aria-label` en el `<form>` y en el `<nav>` para mejorar la accesibilidad
+- `<link rel="canonical">` en el `<head>` para SEO
+- `type="search"` en el input del buscador en lugar de `type="text"`
+- `<button type="submit">` en vez de `<input type="submit">`
+
+Algunas de estas cosas las busqué mientras hacía el ejercicio porque quería que quedara bien, no solo que funcionara.
+
+---
+
+## El archivo index_old.html
+
+Lo dejé a propósito. Es la primera versión que hice, antes de mejorarla. Se puede ver la diferencia: rutas absolutas que no funcionaban, sin `<figure>`, sin `aria-label`, sin `loading="lazy"`. Me parece útil tenerlo como referencia de dónde empecé.
+
+---
+
+## Lo que me llevo
+
+Antes de este ejercicio veía una página web y pensaba en cómo se ve. Ahora pienso en cómo está organizada. Son cosas distintas.
+
+También me di cuenta de que las etiquetas semánticas no son solo "buenas prácticas" que hay que poner porque sí — tienen un motivo detrás, ya sea accesibilidad, SEO o simplemente que el código sea más fácil de leer.
+
+---
+
+## Lo que mejoraría con más tiempo
+
+- Añadir CSS Grid para hacer el layout tipo masonry de verdad
+- Hacer que sea responsive
+- Mejorar los textos alternativos de las imágenes, ahora son demasiado genéricos
+
+---
+
+**Luis Angel Lozano Gascón**
