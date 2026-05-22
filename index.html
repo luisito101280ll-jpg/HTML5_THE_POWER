@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML5 The Power — Luis Angel Lozano Gascón</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.15);
+    }
+
+    .card .number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #38bdf8;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: #475569;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML5 The Power</h1>
+    <p>Prácticas del curso de HTML5 · Luis Angel Lozano Gascón</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <a class="card" href="01-estructura/index.html">
+        <span class="number">Bloque 01</span>
+        <h2>Estructura básica</h2>
+        <p>DOCTYPE, head, body, metaetiquetas y etiquetas de bloque fundamentales.</p>
+      </a>
+
+      <a class="card" href="02-texto-listas-enlaces/index.html">
+        <span class="number">Bloque 02</span>
+        <h2>Texto, listas y enlaces</h2>
+        <p>Listas ordenadas y anidadas, navegación, rutas relativas y anclas internas.</p>
+      </a>
+
+      <a class="card" href="03-imagenes-media/index.html">
+        <span class="number">Bloque 03</span>
+        <h2>Imágenes, media e interactividad</h2>
+        <p>Clon de YouTube con dialog, details, template y eventos del DOM con JavaScript.</p>
+      </a>
+
+      <a class="card" href="05-linktree/index.html">
+        <span class="number">Bloque 05</span>
+        <h2>Linktree personal</h2>
+        <p>Página de perfil con enlaces a redes sociales, semántica y estructura header/main.</p>
+      </a>
+
+      <a class="card" href="06-news/index.html">
+        <span class="number">Bloque 06</span>
+        <h2>Página de noticias</h2>
+        <p>Semántica avanzada con article, aside, figure, picture y srcset responsivo.</p>
+      </a>
+
+      <a class="card" href="07-landing_form/index.html">
+        <span class="number">Bloque 07</span>
+        <h2>Landing con formulario</h2>
+        <p>Página de producto con secciones, testimonios y formulario de contacto completo.</p>
+      </a>
+
+      <a class="card" href="08-portfolio/index.html">
+        <span class="number">Bloque 08</span>
+        <h2>Portfolio personal</h2>
+        <p>Portfolio profesional con navegación interna, mailto y versión alternativa.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Luis Angel Lozano Gascón — Futuro Developer Full Stack</p>
+  </footer>
+</body>
+</html>
