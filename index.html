@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML5 The Power – Prácticas</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    a.card {
+      display: block;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    a.card:hover {
+      border-color: #6366f1;
+      transform: translateY(-2px);
+    }
+
+    .card-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #6366f1;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 0.4rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      color: #475569;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML5 The Power</h1>
+  <p class="subtitle">Colección de prácticas de HTML5</p>
+
+  <div class="grid">
+    <a href="01-estructura/index.html" class="card">
+      <div class="card-num">01</div>
+      <div class="card-title">Estructura básica</div>
+      <div class="card-desc">Fundamentos de la estructura de un documento HTML5</div>
+    </a>
+
+    <a href="02-texto-listas-enlaces/index.html" class="card">
+      <div class="card-num">02</div>
+      <div class="card-title">Texto, listas y enlaces</div>
+      <div class="card-desc">Etiquetas de texto, listas ordenadas/desordenadas y enlaces</div>
+    </a>
+
+    <a href="03-imagenes-media/index.html" class="card">
+      <div class="card-num">03</div>
+      <div class="card-title">Imágenes y media</div>
+      <div class="card-desc">Manejo de imágenes, audio y vídeo en HTML5</div>
+    </a>
+
+    <a href="05-linktree/index.html" class="card">
+      <div class="card-num">05</div>
+      <div class="card-title">Link Tree</div>
+      <div class="card-desc">Página de enlaces al estilo Linktree</div>
+    </a>
+
+    <a href="06-news/index.html" class="card">
+      <div class="card-num">06</div>
+      <div class="card-title">Noticias</div>
+      <div class="card-desc">Maquetación de una página de noticias</div>
+    </a>
+
+    <a href="07-landing_form/index.html" class="card">
+      <div class="card-num">07</div>
+      <div class="card-title">Landing & Formulario</div>
+      <div class="card-desc">Página de aterrizaje con formulario de contacto</div>
+    </a>
+
+    <a href="08-portfolio/index.html" class="card">
+      <div class="card-num">08</div>
+      <div class="card-title">Portfolio</div>
+      <div class="card-desc">Portfolio personal con proyectos y habilidades</div>
+    </a>
+  </div>
+
+  <footer>HTML5 The Power &mdash; Prácticas de desarrollo web</footer>
+</body>
+</html>
