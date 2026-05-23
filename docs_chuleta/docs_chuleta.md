@@ -354,6 +354,55 @@
 
 ---
 
+### 2026-05-23 — Iniciación a CSS · Primera página con estilos
+
+**3 ideas**
+
+- CSS se vincula al HTML con `<link rel="stylesheet" href="style.css">` en el `<head>` — a partir de ahí todo lo que escribas en el `.css` afecta a la página
+- El selector de elemento (`body`, `p`, `header`...) aplica el estilo a **todas** las etiquetas de ese tipo en la página
+- `margin: 0 auto` + `max-width` es la forma clásica de centrar un bloque de contenido horizontalmente
+
+**1 ejemplo mínimo**
+
+```css
+body {
+  margin: 0;
+  background-color: #111;
+  color: #eee;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+article {
+  background: #222;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+```
+
+**1 mini-ejercicio (hecho)**
+
+- Crear la primera hoja de estilos `style.css` y aplicarla a una página de portfolio: fondo oscuro, tipografía definida, colores de enlace, tarjetas con borde redondeado y contenido centrado
+
+**Errores corregidos en este ejercicio**
+
+- `max-width: 900;` → `max-width: 900px;` (sin unidad el navegador ignora la propiedad)
+- `system-UI` → `system-ui` (mayúscula incorrecta)
+- Etiquetas HTML mal cerradas: `<section>` sin cerrar en `#proyectos`, `<footer>` fuera del `<body>`
+
+**1 duda (si aparece)**
+
+- (vacío)
+
+---
+
 ## Repaso espaciado (para no olvidar)
 
 - **Día 1 tras cada bloque:** reescribe la estructura sin mirar (5 min)
@@ -361,3 +410,4 @@
 - **Día 7:** maqueta una página con semántica completa: `<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>`
 - **Día 14:** construye un Linktree y una página de noticias con imagen responsive desde cero
 - **Día 21:** crea un modal `<dialog>` + tabla + sección colapsable con `<details>` sin mirar la chuleta
+- **Día 28:** escribe un `style.css` desde cero con selectores, colores hex, tipografía y centrado con `margin: 0 auto`

@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background-color: #111;
+  color: #eee;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+a {
+  color: crimson;
+  font-style: italic;
+}
+
+header {
+  margin: 18px;
+  border: 1px solid #eee;
+  background: #444;
+  padding: 12px 16%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+article {
+  background: #222;
+  border: 1px solid #eee;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+main {
+  max-width: 900px;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+li {
+  color: grey;
+  font-style: italic;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: justify;
+  line-height: 1.5;
+}

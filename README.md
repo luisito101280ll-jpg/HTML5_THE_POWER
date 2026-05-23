@@ -119,6 +119,20 @@ Documento de consulta rápida y diario de aprendizaje en formato Markdown. Inclu
 
 ---
 
+### 10 · Iniciación a CSS
+**Carpeta:** `10 - css/01-iniciacion/`
+
+Primera página con estilos reales. Conceptos aplicados:
+- Vincular hoja de estilos externa: `<link rel="stylesheet" href="style.css">`
+- Selectores de elemento: `body`, `header`, `main`, `article`, `h1`, `p`, `a`, `li`
+- Colores: `color`, `background-color`, valores hexadecimales (`#111`, `#eee`) y nombres (`crimson`, `grey`)
+- Tipografía: `font-family`, `font-size`, `font-weight`, `font-style`, `text-transform`, `text-align`, `line-height`
+- Espaciado y bordes: `margin`, `padding`, `border`, `border-radius`
+- Centrado de bloque: `max-width` + `margin: 0 auto`
+- Stack de fuentes del sistema: `system-ui, Arial, sans-serif`
+
+---
+
 ## Estado del temario
 
 | Bloque | Tema | Estado |
@@ -131,6 +145,7 @@ Documento de consulta rápida y diario de aprendizaje en formato Markdown. Inclu
 | 06 | Página de noticias | Completado |
 | 07 | Landing con formulario | Completado |
 | 08 | Portfolio personal | Completado |
+| 10 | Iniciación a CSS | En curso |
 
 ---
 
