@@ -49,18 +49,70 @@
 ```
 
 ### Formularios
-- Contenedor: `<form>`
+- Contenedor: `<form method="get">` o `method="post"`
 - Campo de texto: `<input type="text" id="nombre" name="nombre">`
 - Campo de email: `<input type="email" id="email" name="email">`
-- Área de texto: `<textarea id="mensaje" name="mensaje" rows="5"></textarea>`
+- Campo de búsqueda: `<input type="search" name="q">`
+- Checkbox: `<input type="checkbox" name="privacidad" required>`
+- Área de texto: `<textarea id="mensaje" name="mensaje" rows="5" cols="30"></textarea>`
+- Desplegable: `<select name="asunto"><option value="html">HTML</option></select>`
 - Botón de envío: `<input type="submit" value="Enviar">`
 - Etiqueta asociada: `<label for="nombre">Nombre:</label>` → `for` debe coincidir con el `id` del input
-- Texto de ayuda en el campo: atributo `placeholder="Escribe aquí..."`
+- Agrupar campos: `<fieldset>` + `<legend>Título del grupo</legend>`
+- Atributos útiles de input: `placeholder`, `required`, `maxlength`, `autofocus`
 
 ### Texto y entidades
 - Negrita semántica: `<strong>texto importante</strong>`
+- Cursiva semántica: `<em>texto con énfasis</em>`
+- Cita en bloque: `<blockquote><p>texto citado</p></blockquote>`
 - Copyright: `&copy;` → se renderiza como ©
 - Salto de línea: `<br>`
+
+### Metas SEO en el head
+- Descripción: `<meta name="description" content="...">`
+- Palabras clave: `<meta name="keywords" content="html, css, js">`
+- Autor: `<meta name="author" content="Luis Angel Lozano">`
+- URL canónica: `<link rel="canonical" href="https://...">`
+
+### CSS — Selectores
+- **Elemento:** `p { }` — afecta a todas las etiquetas `<p>`
+- **Clase:** `.destacado { }` → se aplica con `class="destacado"` en el HTML
+- **ID:** `#inicio { }` → se aplica con `id="inicio"` — único por página
+- **Descendiente:** `nav a { }` — solo los `<a>` que estén dentro de `<nav>`
+- **Múltiple:** `h1, h2, h3 { }` — aplica a varios elementos a la vez
+
+### CSS — Propiedades de uso frecuente
+```css
+/* Tipografía */
+font-family: system-ui, Arial, sans-serif;
+font-size: 1.2rem;       /* rem = relativo al tamaño base del navegador */
+font-weight: bold;       /* o 400 (normal), 700 (bold) */
+font-style: italic;
+text-align: center;      /* left | right | justify */
+text-transform: uppercase;
+text-decoration: none;   /* quita el subrayado de los enlaces */
+line-height: 1.5;
+
+/* Colores */
+color: #333;             /* color del texto */
+background-color: #f5f5f5;
+
+/* Espaciado */
+margin: 20px;            /* espacio exterior */
+padding: 12px;           /* espacio interior */
+margin: 0 auto;          /* centrar bloque horizontalmente */
+
+/* Bordes */
+border: 1px solid #eee;
+border-radius: 8px;
+
+/* Tamaño */
+max-width: 900px;
+width: 100%;
+
+/* Listas */
+list-style-type: none;   /* quita las viñetas */
+```
 
 ### Elementos interactivos
 - Sección colapsable: `<details>` + `<summary>Título visible</summary>` + contenido + `</details>`
@@ -411,3 +463,115 @@ article {
 - **Día 14:** construye un Linktree y una página de noticias con imagen responsive desde cero
 - **Día 21:** crea un modal `<dialog>` + tabla + sección colapsable con `<details>` sin mirar la chuleta
 - **Día 28:** escribe un `style.css` desde cero con selectores, colores hex, tipografía y centrado con `margin: 0 auto`
+
+---
+
+### 2026-06-02 — Formularios avanzados, selectores CSS y herramientas del entorno
+
+**3 ideas**
+
+- `<fieldset>` + `<legend>` agrupa campos relacionados del formulario visualmente y semánticamente — mejora accesibilidad
+- En CSS hay tres niveles de selector: elemento (`p`), clase (`.destacado`) e ID (`#inicio`). La clase se puede reutilizar en varios elementos, el ID es único por página
+- El selector descendiente (`nav a`) es más preciso que el selector de elemento solo — permite estilizar un `<a>` de la nav sin afectar a todos los `<a>` de la página
+
+**1 ejemplo mínimo**
+
+```html
+<!-- Formulario agrupado -->
+<form method="get">
+  <fieldset>
+    <legend>Datos personales</legend>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required maxlength="50" autofocus placeholder="Tu nombre">
+  </fieldset>
+  <fieldset>
+    <legend>Tu mensaje</legend>
+    <select name="asunto">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+    </select>
+    <input type="checkbox" name="privacidad" required> Acepto la política de privacidad
+  </fieldset>
+  <input type="submit" value="Enviar">
+</form>
+```
+
+```css
+/* Selector de clase — reutilizable */
+.destacado { font-weight: bold; color: #0066cc; }
+
+/* Selector de ID — único */
+#contacto { background-color: #e8f4f8; padding: 20px; }
+
+/* Selector descendiente — solo los <a> dentro de <nav> */
+nav a { color: white; text-decoration: none; }
+```
+
+**1 mini-ejercicio (hecho)**
+
+- Construir una página de ejercicios completa con navegación, tabla de habilidades, imagen con `title` y `width`, formulario con dos `<fieldset>`, `<select>`, `checkbox`, `required`, `autofocus`, enlaces `tel:` y `mailto:`, y hoja CSS con selectores de elemento, clase, ID y descendiente
+
+**Conceptos nuevos**
+
+- `<fieldset>` + `<legend>` — agrupación semántica de formularios
+- `<select>` + `<option>` — menú desplegable
+- `<input type="checkbox">` — casilla de verificación
+- `required`, `maxlength`, `autofocus` — validación y comportamiento del input
+- `<em>` — cursiva semántica (énfasis)
+- `<blockquote>` — cita en bloque
+- `tel:` — enlace a número de teléfono
+- `title` y `width` como atributos de `<img>`
+- `.clase` y `#id` en CSS
+- Selector descendiente en CSS: `nav a`, `footer p`
+- `text-decoration: none` y `list-style-type: none`
+
+**1 duda (si aparece)**
+
+- (vacío)
+
+---
+
+## Emmet — atajos para escribir HTML y CSS más rápido
+
+### HTML
+| Atajo | Resultado |
+|-------|-----------|
+| `!` | Estructura HTML5 completa |
+| `p.destacado` | `<p class="destacado"></p>` |
+| `p#inicio` | `<p id="inicio"></p>` |
+| `ul>li*3` | `<ul>` con 3 `<li>` |
+| `ul>li*3>a` | Lista con 3 enlaces |
+| `section>h2+p` | `<section>` con `<h2>` y `<p>` |
+| `input:text` | `<input type="text">` |
+| `input:email` | `<input type="email">` |
+| `input:submit` | `<input type="submit">` |
+| `form>fieldset>legend+label+input:text` | Estructura de formulario |
+
+### CSS
+| Atajo | Resultado |
+|-------|-----------|
+| `bgc` | `background-color:` |
+| `fz16` | `font-size: 16px` |
+| `fw:b` | `font-weight: bold` |
+| `ta:c` | `text-align: center` |
+| `td:n` | `text-decoration: none` |
+| `c:#333` | `color: #333` |
+| `p20` | `padding: 20px` |
+| `m20` | `margin: 20px` |
+| `w100p` | `width: 100%` |
+| `bd` | `border:` |
+
+---
+
+## Atajos VS Code
+
+| Atajo | Acción |
+|-------|--------|
+| `Shift + Alt + F` | Formatea todo el documento |
+| `Ctrl + /` | Comenta / descomenta línea |
+| `Alt + ↑ / ↓` | Mueve línea arriba o abajo |
+| `Ctrl + D` | Selecciona la siguiente ocurrencia igual |
+| `Alt + clic` | Multi-cursor |
+| `Ctrl + Space` | Fuerza el autocompletado |
+| `Ctrl + Z` | Deshacer |
+| `Ctrl + S` | Guardar (recarga Live Server)
